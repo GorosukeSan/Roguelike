@@ -1,0 +1,3 @@
+[submodule "Content/VerseLibrary"]
+	path = Content/VerseLibrary
+	url = https://github.com/GorosukeSan/VerseLibrary.git
