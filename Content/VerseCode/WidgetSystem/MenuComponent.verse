@@ -17,9 +17,21 @@ menu_component<public> := class<final_super><final>(common_widget_component, has
     OnPlay<override>(Player:player):void=
         ShowUI(Player)
 
-    CreateWidget<override>(Player:player):displayable_widget_base=
-        menu_widget:
-            Player := Player
-            MenuWidget := WBP_Menu:
-                PlayerIconTexture := Player.GetSafeIcon()
-                PlayerNameMessage := GetName(Player)
+    CreateWidget<override>(Player:player):result(displayable_widget_base, void)=
+        if:
+            PlayerIcon := Player.GetIcon[]
+        then:
+            NewWidget := 
+                menu_widget:
+                    Player := Player
+                    MenuWidget := WBP_Menu:
+                        PlayerIconTexture := PlayerIcon
+                        PlayerNameMessage := GetName(Player)
+            MakeSuccess(NewWidget)
+        else:
+            MakeError()
+
+    InitialTasks<override>():[]common_task_function=
+        array:
+            common_task_runnable_function:
+                Task := StartGameTask
