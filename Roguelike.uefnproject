@@ -5,7 +5,7 @@
 	"keyArt": "",
 	"docsUrl": "",
 	"apiAccess": "Private",
-	"compatibilityVersion": "40.40",
+	"compatibilityVersion": "40.41",
 	"requiredRedirectorStartingVersion": "40.40.53683214",
 	"editorPermissions": [],
 	"epicApp": "",
@@ -49,7 +49,17 @@
 			{
 				"bEnablePersonaDevice": false
 			},
-			"version": 1
+			"version": 1,
+			"inventory":
+			{
+				"bIsCustomInventoryAllowed": true
+			}
+		},
+		"ugcLocalization":
+		{
+			"nativeCulture": "",
+			"culturesToGenerate": [],
+			"poFormat": "Unreal"
 		}
 	},
 	"bindings":
